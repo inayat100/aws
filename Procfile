@@ -1,0 +1,1 @@
+web: gunicorn myaws.wsgi --log-file -

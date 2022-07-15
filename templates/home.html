@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        <label for="name" >Name</label>
+    <input type="text" placeholder="enter your name" id="name" name="name"><br><br>
+     <label for="img" >Name</label>
+    <input type="file" placeholder="enter your image" id="img" name="img"><br><br>
+    <input type="submit" value="save data" >
+</form>
+
+{% for d in data %}
+<h4>{{d.name}}</h4>
+<img src="{{d.img.url}}">
+
+<br>
+{% endfor %}
+</body>
+</html>
